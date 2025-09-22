@@ -1,4 +1,4 @@
-/** @type {import('prettier').Config} */
+/** @type {import('prettier').Config & import('prettier-plugin-tailwindcss').PluginOptions} */
 export default {
   tabWidth: 2,
   useTabs: false,
@@ -25,6 +25,10 @@ export default {
       options: { parser: 'css' },
     },
   ],
-  plugins: ['prettier-plugin-astro', 'prettier-plugin-css-order'],
+  plugins: [
+    'prettier-plugin-astro',
+    'prettier-plugin-tailwindcss',
+    'prettier-plugin-css-order',
+  ],
   pluginSearchDirs: false,
 }
