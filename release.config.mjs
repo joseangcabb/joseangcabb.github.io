@@ -19,6 +19,7 @@ export default {
       },
     ],
     '@semantic-release/release-notes-generator',
+    ['@semantic-release/npm', { npmPublish: false }],
     [
       '@semantic-release/changelog',
       {
