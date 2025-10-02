@@ -30,5 +30,4 @@ export default {
     'prettier-plugin-tailwindcss',
     'prettier-plugin-css-order',
   ],
-  pluginSearchDirs: false,
 }
