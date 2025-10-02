@@ -35,8 +35,8 @@ jobs:
 
       - name: Run ESLint
         run: |
-          pnpm eslint 'src/**/*.{js,ts,jsx,tsx}' --max-warnings=0
+          pnpm eslint "src/**/*.{js,ts,jsx,tsx,astro}" --max-warnings=0
 
       - name: Prettier check
         run: |
-          pnpm prettier --check '**/*.{css,scss,md,json,html}'
+          pnpm prettier --check "**/*.{css,scss,md,json,html,astro}"
