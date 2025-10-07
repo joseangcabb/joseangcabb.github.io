@@ -16,14 +16,6 @@ export default {
       files: '*.astro',
       options: { parser: 'astro' },
     },
-    {
-      files: ['*.ts', '*.tsx', '*.js', '*.jsx'],
-      options: { parser: 'typescript' },
-    },
-    {
-      files: '*.css',
-      options: { parser: 'css' },
-    },
   ],
   plugins: [
     'prettier-plugin-astro',
