@@ -1,0 +1,18 @@
+---
+import Code from '@/assets/icons/code.svg'
+
+interface IconProps {
+  name: 'code'
+  className?: string
+}
+
+const { name, className } = Astro.props as IconProps
+
+const icons = {
+  code: Code,
+}
+
+const IconComponent = icons[name]
+---
+
+{IconComponent ? <IconComponent class={className} /> : null}
