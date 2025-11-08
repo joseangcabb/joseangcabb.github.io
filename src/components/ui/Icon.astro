@@ -1,6 +1,10 @@
 ---
 import Code from '@/assets/icons/code.svg'
 
+// Social icons
+import Linkedin from '@/assets/icons/socials/linkedin.svg'
+import Github from '@/assets/icons/socials/github.svg'
+
 interface IconProps {
   name: 'code'
   className?: string
@@ -10,6 +14,8 @@ const { name, className } = Astro.props as IconProps
 
 const icons = {
   code: Code,
+  linkedin: Linkedin,
+  github: Github,
 }
 
 const IconComponent = icons[name]
