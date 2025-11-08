@@ -1,12 +1,13 @@
 ---
+import type { NavItem } from '@/types/site'
 import Icon from '@/components/ui/Icon.astro'
 
 interface Props {
   siteName: string
-  navItems: Array<{ label: string; href: string; variant?: 'link' | 'button' }>
+  navItems: NavItem[]
 }
 
-const { siteName, navItems } = Astro.props
+const { siteName, navItems } = Astro.props as Props
 
 const navItemStyles: Record<'link' | 'button', string> = {
   link: 'font-semibold hover:text-slate-600',
