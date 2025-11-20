@@ -1,0 +1,19 @@
+---
+import { capitalize } from '@/utils/format'
+
+interface Props {
+  text: string
+}
+
+const { text }: Props = Astro.props
+---
+
+<div class="group relative inline-flex items-center justify-center">
+  <slot />
+
+  <span
+    class="pointer-events-none absolute bottom-full left-1/2 mb-1 hidden -translate-x-1/2 rounded bg-gray-900 px-2 py-1 text-xs whitespace-nowrap text-white shadow group-hover:block"
+  >
+    {capitalize(text)}
+  </span>
+</div>
