@@ -1,24 +1,13 @@
 ---
-import Code from '@/assets/icons/code.svg'
+import { icons, type IconName } from '@/lib/icons'
 
-// Social icons
-import Linkedin from '@/assets/icons/socials/linkedin.svg'
-import Github from '@/assets/icons/socials/github.svg'
-
-interface IconProps {
-  name: 'code'
+interface Props {
+  name: IconName
   className?: string
 }
 
-const { name, className } = Astro.props as IconProps
-
-const icons = {
-  code: Code,
-  linkedin: Linkedin,
-  github: Github,
-}
-
+const { name, className } = Astro.props as Props
 const IconComponent = icons[name]
 ---
 
-{IconComponent ? <IconComponent class={className} /> : null}
+{IconComponent && <IconComponent class={className} />}
