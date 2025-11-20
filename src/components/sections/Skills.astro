@@ -1,0 +1,83 @@
+---
+import type { Skills } from '@/types/site'
+import Card from '@/components/ui/Card.astro'
+import Icon from '@/components/ui/Icon.astro'
+import Tooltip from '@/components/ui/Tooltip.astro'
+
+interface Props {
+  skills: Skills
+}
+
+const { skills } = Astro.props as Props
+---
+
+<div class="container mx-auto grid grid-cols-3 gap-8">
+  <Card title={skills.backend.title} description={skills.backend.description}>
+    <div class="grid grid-cols-2 gap-2 md:grid-cols-4 xl:grid-cols-6">
+      {
+        skills.backend.stack.map((item) => (
+          <Tooltip text={item}>
+            <Icon
+              name={item}
+              className="size-14 rounded-sm border border-blue-200 p-1"
+            />
+          </Tooltip>
+        ))
+      }
+    </div>
+  </Card>
+
+  <Card title={skills.frontend.title} description={skills.frontend.description}>
+    <div class="grid grid-cols-2 gap-2 md:grid-cols-4 xl:grid-cols-6">
+      {
+        skills.frontend.stack.map((item) => (
+          <Tooltip text={item}>
+            <Icon
+              name={item}
+              className="size-14 rounded-sm border border-blue-200 p-1"
+            />
+          </Tooltip>
+        ))
+      }
+    </div>
+  </Card>
+
+  <Card title={skills.devOps.title} description={skills.devOps.description}>
+    <div class="grid grid-cols-2 gap-2 md:grid-cols-4 xl:grid-cols-6">
+      {
+        skills.devOps.stack.map((item) => (
+          <Tooltip text={item}>
+            <Icon
+              name={item}
+              className="size-14 rounded-sm border border-blue-200 p-1"
+            />
+          </Tooltip>
+        ))
+      }
+    </div>
+  </Card>
+
+  <Card
+    title={skills.softwareArchitecture.title}
+    description={skills.softwareArchitecture.description}
+  >
+    <ul class="list-inside list-disc space-y-1 text-gray-600">
+      {skills.softwareArchitecture.stack.map((item) => <li>{item}</li>)}
+    </ul>
+  </Card>
+
+  <Card title={skills.devWorkflow.title} description={skills.devWorkflow.description}>
+    <div class="grid grid-cols-2 gap-2 md:grid-cols-4 xl:grid-cols-6">
+      {
+        skills.devWorkflow.stack.map((item) => (
+          <Tooltip text={item}>
+            <Icon
+              name={item}
+              className="size-14 rounded-sm border border-blue-200 p-1"
+            />
+          </Tooltip>
+        ))
+      }
+    </div>
+  </Card>
+</div>

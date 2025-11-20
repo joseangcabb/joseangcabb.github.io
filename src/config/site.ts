@@ -37,9 +37,40 @@ export const siteConfig: SiteConfig = {
     },
   ],
   skills: {
-    backend: ['python', 'golang', 'nodejs', 'kotlin', 'postgresql'],
-    frontend: ['typescript', 'html5', 'css3', 'react', 'nextjs', 'tailwind'],
-    devOps: ['aws', 'docker', 'kubernetes', 'ansible', 'git', 'bash'],
-    devWorkflow: ['archlinux', 'neovim', 'tmux'],
+    backend: {
+      title: 'Backend',
+      description:
+        'Strong backend foundations for scalable, secure, and maintainable applications',
+      stack: ['python', 'golang', 'nodejs', 'kotlin', 'postgresql'],
+    },
+    frontend: {
+      title: 'Frontend',
+      description:
+        'Building modern, responsive interfaces with clean, accessible, and high-quality code',
+      stack: ['typescript', 'html5', 'css3', 'react', 'nextjs', 'tailwind'],
+    },
+    devOps: {
+      title: 'DevOps & Infrastructure',
+      description:
+        'Designing secure, automated, and scalable infrastructure with CI/CD, containers, and cloud platforms',
+      stack: ['aws', 'docker', 'kubernetes', 'ansible', 'git', 'bash'],
+    },
+    devWorkflow: {
+      title: 'Developer Workflow',
+      description:
+        'A highly optimized developer workflow powered by Arch Linux, Neovim, tmux, custom tooling, and AI-assisted automation to maximize speed and productivity',
+      stack: ['archlinux', 'neovim', 'tmux'],
+    },
+    softwareArchitecture: {
+      title: 'Software Architecture',
+      description:
+        'Designing scalable and well-structured systems through proven architectural principles',
+      stack: [
+        'Clean Architecture',
+        'Event-driven Systems',
+        'Domain-Driven Design (DDD)',
+        'API Design',
+      ],
+    },
   },
 }

@@ -12,9 +12,16 @@ export type SocialLink = {
   icon?: 'linkedin' | 'github'
 }
 
+export type SkillCategory<T = IconName> = {
+  title: string
+  description: string
+  stack: T[]
+}
+
 export type Skills = {
-  backend: IconName[]
-  frontend: IconName[]
-  devOps: IconName[]
-  devWorkflow: IconName[]
+  backend: SkillCategory
+  frontend: SkillCategory
+  devOps: SkillCategory
+  devWorkflow: SkillCategory
+  softwareArchitecture: SkillCategory<string>
 }
