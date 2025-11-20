@@ -1,4 +1,4 @@
-import type { NavItem, SocialLink } from '@/types/site'
+import type { NavItem, SocialLink, Skills } from '@/types/site'
 
 type SiteConfig = {
   name: string
@@ -8,6 +8,7 @@ type SiteConfig = {
   summary: string
   navItems: NavItem[]
   socialLinks?: SocialLink[]
+  skills: Skills
 }
 
 export const siteConfig: SiteConfig = {
@@ -35,4 +36,10 @@ export const siteConfig: SiteConfig = {
       icon: 'github',
     },
   ],
+  skills: {
+    backend: ['python', 'golang', 'nodejs', 'kotlin', 'postgresql'],
+    frontend: ['typescript', 'html5', 'css3', 'react', 'nextjs', 'tailwind'],
+    devOps: ['aws', 'docker', 'kubernetes', 'ansible', 'git', 'bash'],
+    devWorkflow: ['archlinux', 'neovim', 'tmux'],
+  },
 }
