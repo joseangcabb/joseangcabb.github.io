@@ -1,4 +1,5 @@
 import Code from '@/assets/icons/code.svg'
+import MapPin from '@/assets/icons/map-pin.svg'
 
 // Social icons
 import Linkedin from '@/assets/icons/socials/linkedin.svg'
@@ -41,6 +42,7 @@ export const icons = {
   kotlin: Kotlin,
   kubernetes: Kubernetes,
   linkedin: Linkedin,
+  mapPin: MapPin,
   neovim: Neovim,
   nextjs: Nextjs,
   nodejs: Nodejs,
