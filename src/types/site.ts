@@ -25,3 +25,9 @@ export type Skills = {
   devWorkflow: SkillCategory
   softwareArchitecture: SkillCategory<string>
 }
+
+export type Experience = {
+  company: string
+  role: string
+  period: string
+}

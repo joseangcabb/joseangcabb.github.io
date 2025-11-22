@@ -1,4 +1,4 @@
-import type { NavItem, SocialLink, Skills } from '@/types/site'
+import type { NavItem, SocialLink, Skills, Experience } from '@/types/site'
 
 type SiteConfig = {
   name: string
@@ -9,6 +9,7 @@ type SiteConfig = {
   navItems: NavItem[]
   socialLinks?: SocialLink[]
   skills: Skills
+  experiences: Experience[]
 }
 
 export const siteConfig: SiteConfig = {
@@ -73,4 +74,41 @@ export const siteConfig: SiteConfig = {
       ],
     },
   },
+  experiences: [
+    {
+      company: 'ioet',
+      role: 'Senior Software Engineer',
+      period: 'Oct 2025 - Present',
+    },
+    {
+      company: 'XYSolid',
+      role: 'Senior Software Engineer',
+      period: 'Aug 2025 - Oct 2025',
+    },
+    {
+      company: 'Autolab',
+      role: 'Lead Software Engineer',
+      period: 'Jan 2022 - Jul 2025',
+    },
+    {
+      company: 'Tecla Labs',
+      role: 'Software Engineer',
+      period: 'Apr 2017 - Dec 2021',
+    },
+    {
+      company: 'Northwest Title',
+      role: 'RPA Developer',
+      period: 'Dec 2020 - May 2021',
+    },
+    {
+      company: 'ScottDb',
+      role: 'Lead Sofftware Engineer',
+      period: 'Dec 2013 - Mar 2017',
+    },
+    {
+      company: 'My Marketing Solutions',
+      role: 'Software Engineer',
+      period: 'Sep 2013 - Nov 2013',
+    },
+  ],
 }
