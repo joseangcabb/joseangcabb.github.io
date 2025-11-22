@@ -1,4 +1,4 @@
-import type { NavItem, SocialLink, Skills, Experience } from '@/types/site'
+import type { NavItem, SocialLink, Skills, Experience, Project } from '@/types/site'
 
 type SiteConfig = {
   name: string
@@ -10,6 +10,7 @@ type SiteConfig = {
   socialLinks?: SocialLink[]
   skills: Skills
   experiences: Experience[]
+  projects: Project[]
 }
 
 export const siteConfig: SiteConfig = {
@@ -23,6 +24,7 @@ export const siteConfig: SiteConfig = {
     { label: 'About', href: '/', variant: 'link' },
     { label: 'Skills', href: '#skills', variant: 'link' },
     { label: 'Experiences', href: '#experiences', variant: 'link' },
+    { label: 'Projects', href: '#projects', variant: 'link' },
     { label: 'Blog', href: '/blog', variant: 'button' },
   ],
   socialLinks: [
@@ -109,6 +111,20 @@ export const siteConfig: SiteConfig = {
       company: 'My Marketing Solutions',
       role: 'Software Engineer',
       period: 'Sep 2013 - Nov 2013',
+    },
+  ],
+  projects: [
+    {
+      title: 'Personal Website & Blog',
+      description:
+        'Personal website and blog built with Astro and TypeScript, showcasing software projects, technical insights, and development experiments.',
+      url: 'https://github.com/joseangcabb/joseangcabb.github.io',
+    },
+    {
+      title: 'Developer Dotfiles',
+      description:
+        'A modern and modular dotfiles setup featuring an optimized Neovim environment, productive tmux workflow, and consistent tooling across macOS and Linux.',
+      url: '#',
     },
   ],
 }
