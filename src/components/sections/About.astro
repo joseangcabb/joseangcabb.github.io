@@ -10,42 +10,51 @@ interface Props {
   socialLinks?: SocialLink[]
 }
 
-const { jobTitle, seniority, focusArea, summary, socialLinks } = Astro.props as Props
+const {
+  jobTitle,
+  seniority,
+  focusArea,
+  summary,
+  socialLinks = [],
+} = Astro.props as Props
 ---
 
-<section class="pt-28 pb-48">
-  <div class="container mx-auto flex justify-center gap-x-10">
-    <div class="flex w-2/3 flex-col justify-center">
-      <h1 class="text-5xl font-black tracking-tight">
-        {seniority}
-        {
-          focusArea && (
-            <span class="bg-gradient-to-r from-blue-600 to-slate-600 bg-clip-text text-transparent">
-              {focusArea}
-            </span>
-          )
-        }
-        {jobTitle}
-      </h1>
-      <p class="mt-4 text-lg text-gray-600">
-        {summary}
-      </p>
-      <div class="mt-8 flex gap-x-2">
-        {
-          socialLinks &&
-            socialLinks.map((item) => {
-              return (
-                <a
-                  href={item.url}
-                  class="flex items-center gap-2 rounded-lg bg-gray-100 px-4 py-3 text-lg font-semibold text-gray-900 hover:bg-gray-200"
-                >
-                  <Icon name={item.icon} className="size-6 text-slate-600" />
-                  {item.name}
-                </a>
-              )
-            })
-        }
-      </div>
-    </div>
-  </div>
+<section class="py-8">
+  <h1 class="text-5xl leading-tight font-black tracking-tight">
+    {seniority && <span>{seniority} </span>}
+    {
+      focusArea && (
+        <span class="bg-gradient-to-r from-blue-600 to-slate-600 bg-clip-text text-transparent">
+          {focusArea}{' '}
+        </span>
+      )
+    }
+    <span>{jobTitle}</span>
+  </h1>
+
+  <p class="mt-6 text-lg leading-relaxed text-gray-600">
+    {summary}
+  </p>
+
+  {
+    socialLinks.length > 0 && (
+      <nav aria-label="Redes sociales" class="mt-8">
+        <ul class="flex flex-wrap gap-3">
+          {socialLinks.map(({ url, icon, name }) => (
+            <li>
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 rounded-lg bg-gray-100 px-4 py-3 text-base font-medium text-gray-900 transition hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+              >
+                <Icon name={icon} class="size-6 text-slate-700" aria-hidden="true" />
+                <span>{name}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )
+  }
 </section>
