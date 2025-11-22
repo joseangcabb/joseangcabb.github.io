@@ -1,9 +1,26 @@
 ---
+import { siteConfig } from '@/config/site'
 import SiteLayout from '@/layouts/SiteLayout.astro'
-import Blog from '@/content/blog.mdx'
+import Section from '@/components/layout/Section.astro'
+
+import About from '@/components/sections/About.astro'
+import Skills from '@/components/sections/Skills.astro'
+import Experiences from '@/components/sections/Experiences.astro'
+import Projects from '@/components/sections/Projects.astro'
 ---
 
 <SiteLayout>
-  <h1>Jose Palacios Caballero</h1>
-  <Blog />
+  <About {...siteConfig} />
+
+  <Section title="Skills" description="">
+    <Skills skills={siteConfig.skills} />
+  </Section>
+
+  <Section title="Experiences" description="">
+    <Experiences experiences={siteConfig.experiences} />
+  </Section>
+
+  <Section title="Projects" description="">
+    <Projects projects={siteConfig.projects} />
+  </Section>
 </SiteLayout>
