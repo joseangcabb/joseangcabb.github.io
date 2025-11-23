@@ -1,5 +1,7 @@
 import Code from '@/assets/icons/code.svg'
 import MapPin from '@/assets/icons/map-pin.svg'
+import Bars from '@/assets/icons/bars.svg'
+import X from '@/assets/icons/x.svg'
 
 // Social icons
 import Linkedin from '@/assets/icons/socials/linkedin.svg'
@@ -32,6 +34,7 @@ export const icons = {
   archlinux: Archlinux,
   aws: Aws,
   bash: Bash,
+  bars: Bars,
   code: Code,
   css3: Css3,
   docker: Docker,
@@ -52,6 +55,7 @@ export const icons = {
   tailwind: Tailwind,
   tmux: Tmux,
   typescript: Typescript,
+  x: X,
 }
 
 export type IconName = keyof typeof icons
