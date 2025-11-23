@@ -1,11 +1,13 @@
 import type { NavItem, Sections } from '@/types/site'
 
 type SiteConfig = {
+  siteName: string
   navItems: NavItem[]
   sections: Sections
 }
 
 export const siteConfig: SiteConfig = {
+  siteName: 'Jose Palacios',
   navItems: [
     { label: 'About', href: '/', variant: 'link' },
     { label: 'Skills', href: '#skills', variant: 'link' },
