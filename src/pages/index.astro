@@ -1,4 +1,5 @@
 ---
+import { profileConfig } from '@/config/profile'
 import { siteConfig } from '@/config/site'
 import SiteLayout from '@/layouts/SiteLayout.astro'
 import Section from '@/components/layout/Section.astro'
@@ -11,27 +12,27 @@ import Projects from '@/components/sections/Projects.astro'
 
 <SiteLayout>
   <Section>
-    <About {...siteConfig} />
+    <About {...profileConfig} />
   </Section>
 
   <Section
-    title="Skills"
-    description="A solid technical foundation built across backend, frontend, DevOps, and high-performance engineering workflows. Tools and technologies I use daily to design, build, and scale reliable software."
+    title={siteConfig.sections.skills.title}
+    description={siteConfig.sections.skills.description}
   >
-    <Skills skills={siteConfig.skills} />
+    <Skills skills={profileConfig.skills} />
   </Section>
 
   <Section
-    title="Experiences"
-    description="Over a decade of experience building production-ready systems, delivering business-critical features, and leading engineering initiatives across startups and high-growth teams."
+    title={siteConfig.sections.experiences.title}
+    description={siteConfig.sections.experiences.description}
   >
-    <Experiences experiences={siteConfig.experiences} />
+    <Experiences experiences={profileConfig.experiences} />
   </Section>
 
   <Section
-    title="Projects"
-    description="A selection of personal and professional projects that showcase my engineering style, attention to detail, and ability to deliver clean, scalable, and thoughtful solutions."
+    title={siteConfig.sections.projects.title}
+    description={siteConfig.sections.projects.description}
   >
-    <Projects projects={siteConfig.projects} />
+    <Projects projects={profileConfig.projects} />
   </Section>
 </SiteLayout>
