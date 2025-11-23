@@ -19,42 +19,40 @@ const {
 } = Astro.props as Props
 ---
 
-<section class="py-8">
-  <h1 class="text-5xl leading-tight font-black tracking-tight">
-    {seniority && <span>{seniority} </span>}
-    {
-      focusArea && (
-        <span class="bg-gradient-to-r from-blue-600 to-slate-600 bg-clip-text text-transparent">
-          {focusArea}{' '}
-        </span>
-      )
-    }
-    <span>{jobTitle}</span>
-  </h1>
-
-  <p class="mt-6 text-lg leading-relaxed text-gray-600">
-    {summary}
-  </p>
-
+<h1 class="text-5xl leading-tight font-black tracking-tight">
+  {seniority && <span>{seniority} </span>}
   {
-    socialLinks.length > 0 && (
-      <nav aria-label="Redes sociales" class="mt-8">
-        <ul class="flex flex-wrap gap-3">
-          {socialLinks.map(({ url, icon, name }) => (
-            <li>
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex items-center gap-2 rounded-lg bg-gray-100 px-4 py-3 text-base font-medium text-gray-900 transition hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-              >
-                <Icon name={icon} class="size-6 text-slate-700" aria-hidden="true" />
-                <span>{name}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+    focusArea && (
+      <span class="mr-1 bg-gradient-to-r from-blue-600 to-slate-600 bg-clip-text text-transparent">
+        {focusArea}
+      </span>
     )
   }
-</section>
+  <span>{jobTitle}</span>
+</h1>
+
+<p class="mt-6 text-lg leading-relaxed text-gray-600">
+  {summary}
+</p>
+
+{
+  socialLinks.length > 0 && (
+    <nav aria-label="Redes sociales" class="mt-8">
+      <ul class="flex flex-wrap gap-3">
+        {socialLinks.map(({ url, icon, name }) => (
+          <li>
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 rounded-lg bg-gray-100 px-4 py-3 text-base font-medium text-gray-900 transition hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            >
+              <Icon name={icon} class="size-6 text-slate-700" aria-hidden="true" />
+              <span>{name}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}
