@@ -1,25 +1,11 @@
-import type { NavItem, SocialLink, Skills, Experience, Project } from '@/types/site'
+import type { NavItem, Sections } from '@/types/site'
 
 type SiteConfig = {
-  name: string
-  jobTitle: string
-  seniority?: string
-  focusArea?: string
-  summary: string
   navItems: NavItem[]
-  socialLinks?: SocialLink[]
-  skills: Skills
-  experiences: Experience[]
-  projects: Project[]
+  sections: Sections
 }
 
 export const siteConfig: SiteConfig = {
-  name: 'Jose Palacios',
-  jobTitle: 'Software Engineer',
-  seniority: 'Senior',
-  focusArea: 'Full-Stack',
-  summary:
-    'With over a decade of experience designing, developing, and maintaining high-performance software solutions.Certified Systems Engineer with a proven track record of delivering remote projects for clients in the US and Latin America, spanning legacy systems, modern web architectures, and scalable production environments.',
   navItems: [
     { label: 'About', href: '/', variant: 'link' },
     { label: 'Skills', href: '#skills', variant: 'link' },
@@ -27,104 +13,21 @@ export const siteConfig: SiteConfig = {
     { label: 'Projects', href: '#projects', variant: 'link' },
     { label: 'Blog', href: '/blog', variant: 'button' },
   ],
-  socialLinks: [
-    {
-      name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/joseangpalacios',
-      icon: 'linkedin',
-    },
-    {
-      name: 'GitHub',
-      url: 'https://github.com/joseangcabb',
-      icon: 'github',
-    },
-  ],
-  skills: {
-    backend: {
-      title: 'Backend',
+  sections: {
+    skills: {
+      title: 'Skills',
       description:
-        'Strong backend foundations for scalable, secure, and maintainable applications',
-      stack: ['python', 'golang', 'nodejs', 'kotlin', 'postgresql'],
+        'A solid technical foundation built across backend, frontend, DevOps, and high-performance engineering workflows. Tools and technologies I use daily to design, build, and scale reliable software.',
     },
-    frontend: {
-      title: 'Frontend',
+    experiences: {
+      title: 'Experiences',
       description:
-        'Building modern, responsive interfaces with clean, accessible, and high-quality code',
-      stack: ['typescript', 'html5', 'css3', 'react', 'nextjs', 'tailwind'],
+        'Over a decade of experience building production-ready systems, delivering business-critical features, and leading engineering initiatives across startups and high-growth teams.',
     },
-    devOps: {
-      title: 'DevOps & Infrastructure',
+    projects: {
+      title: 'Projects',
       description:
-        'Designing secure, automated, and scalable infrastructure with CI/CD, containers, and cloud platforms',
-      stack: ['aws', 'docker', 'kubernetes', 'ansible', 'git', 'bash'],
-    },
-    devWorkflow: {
-      title: 'Developer Workflow',
-      description:
-        'A highly optimized developer workflow powered by Arch Linux, Neovim, tmux, custom tooling, and AI-assisted automation to maximize speed and productivity',
-      stack: ['archlinux', 'neovim', 'tmux'],
-    },
-    softwareArchitecture: {
-      title: 'Software Architecture',
-      description:
-        'Designing scalable and well-structured systems through proven architectural principles',
-      stack: [
-        'Clean Architecture',
-        'Event-driven Systems',
-        'Domain-Driven Design (DDD)',
-        'API Design',
-      ],
+        'A selection of personal and professional projects that showcase my engineering style, attention to detail, and ability to deliver clean, scalable, and thoughtful solutions.',
     },
   },
-  experiences: [
-    {
-      company: 'ioet',
-      role: 'Senior Software Engineer',
-      period: 'Oct 2025 - Present',
-    },
-    {
-      company: 'XYSolid',
-      role: 'Senior Software Engineer',
-      period: 'Aug 2025 - Oct 2025',
-    },
-    {
-      company: 'Autolab',
-      role: 'Lead Software Engineer',
-      period: 'Jan 2022 - Jul 2025',
-    },
-    {
-      company: 'Tecla Labs',
-      role: 'Software Engineer',
-      period: 'Apr 2017 - Dec 2021',
-    },
-    {
-      company: 'Northwest Title',
-      role: 'RPA Developer',
-      period: 'Dec 2020 - May 2021',
-    },
-    {
-      company: 'ScottDb',
-      role: 'Lead Sofftware Engineer',
-      period: 'Dec 2013 - Mar 2017',
-    },
-    {
-      company: 'My Marketing Solutions',
-      role: 'Software Engineer',
-      period: 'Sep 2013 - Nov 2013',
-    },
-  ],
-  projects: [
-    {
-      title: 'Personal Website & Blog',
-      description:
-        'Personal website and blog built with Astro and TypeScript, showcasing software projects, technical insights, and development experiments.',
-      url: 'https://github.com/joseangcabb/joseangcabb.github.io',
-    },
-    {
-      title: 'Developer Dotfiles',
-      description:
-        'A modern and modular dotfiles setup featuring an optimized Neovim environment, productive tmux workflow, and consistent tooling across macOS and Linux.',
-      url: '#',
-    },
-  ],
 }
