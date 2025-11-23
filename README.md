@@ -1,46 +1,52 @@
-# josepalacioscabb.dev
+# 👨‍💻 Personal Website
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+A modern, high-performance personal website built with Astro, TypeScript, and TailwindCSS.
+Designed with a modular, scalable architecture that emphasizes clarity, maintainability, and long-term evolution.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🌐 Live URL
 
-## 🚀 Project Structure
+[https://josepalacioscabb.dev](https://josepalacioscabb.dev/)
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🚀 Tech Stack
+
+- `Astro 5` Hybrid rendering & island architecture
+- `TypeScript` Strict, expressive types across data & UI
+- `TailwindCSS v4` Utility-first styling
+- `Astro Islands` Scoped interactivity where needed
+- `SVG Icon System` Centralized, typed, optimized
+- `pnpm` Fast, deterministic package management
+- `ESLint Flat Config + Prettier` Unified code formatting
+- `Husky + lint-staged` Enforced commit quality
+- `GitHub Actions + GitHub Pages` CI/CD pipeline
+
+## 🗂️ Project Structure
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+src/
+├── assets/          # SVG icons
+├── components/      # UI components, layouts, and page sections
+├── config/          # Site settings and profile data
+├── layouts/         # Page layouts
+├── lib/             # Core utilities
+├── pages/           # Astro routes
+├── styles/          # Global styles (Tailwind)
+├── types/           # Shared TypeScript interfaces
+└── utils/           # Helper functions
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🛠️ Development
 
-## 🧞 Commands
+Run the following commands at the project root to build, serve, and preview the site:
 
-All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
+| Command | Action |
+| --- | --- |
 | `pnpm install`             | Installs dependencies                            |
 | `pnpm dev`             | Starts local dev server at `localhost:4321`      |
 | `pnpm build`           | Build your production site to `./dist/`          |
 | `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 📦 Deployment
+
+This project is deployed via GitHub Pages using a GitHub Actions workflow included in `.github/workflows/deploy.yml`.
