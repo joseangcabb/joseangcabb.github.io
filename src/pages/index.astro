@@ -10,17 +10,28 @@ import Projects from '@/components/sections/Projects.astro'
 ---
 
 <SiteLayout>
-  <About {...siteConfig} />
+  <Section>
+    <About {...siteConfig} />
+  </Section>
 
-  <Section title="Skills" description="">
+  <Section
+    title="Skills"
+    description="A solid technical foundation built across backend, frontend, DevOps, and high-performance engineering workflows. Tools and technologies I use daily to design, build, and scale reliable software."
+  >
     <Skills skills={siteConfig.skills} />
   </Section>
 
-  <Section title="Experiences" description="">
+  <Section
+    title="Experiences"
+    description="Over a decade of experience building production-ready systems, delivering business-critical features, and leading engineering initiatives across startups and high-growth teams."
+  >
     <Experiences experiences={siteConfig.experiences} />
   </Section>
 
-  <Section title="Projects" description="">
+  <Section
+    title="Projects"
+    description="A selection of personal and professional projects that showcase my engineering style, attention to detail, and ability to deliver clean, scalable, and thoughtful solutions."
+  >
     <Projects projects={siteConfig.projects} />
   </Section>
 </SiteLayout>
