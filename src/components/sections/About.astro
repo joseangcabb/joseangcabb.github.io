@@ -10,13 +10,7 @@ interface Props {
   socialLinks?: SocialLink[]
 }
 
-const {
-  jobTitle,
-  seniority,
-  focusArea,
-  summary,
-  socialLinks = [],
-} = Astro.props as Props
+const { jobTitle, seniority, focusArea, summary, socialLinks = [] } = Astro.props
 ---
 
 <h1 class="text-5xl leading-tight font-black tracking-tight">
