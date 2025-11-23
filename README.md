@@ -1,5 +1,9 @@
 # 👨‍💻 Personal Website
 
+![Deploy](https://github.com/joseangcabb/joseangcabb.github.io/actions/workflows/deploy.yml/badge.svg)
+![Pages](https://img.shields.io/github/deployments/joseangcabb/joseangcabb.github.io/github-pages?label=pages)
+![License](https://img.shields.io/github/license/joseangcabb/joseangcabb.github.io)
+
 A modern, high-performance personal website built with Astro, TypeScript, and TailwindCSS.
 Designed with a modular, scalable architecture that emphasizes clarity, maintainability, and long-term evolution.
 
