@@ -15,24 +15,15 @@ import Projects from '@/components/sections/Projects.astro'
     <About {...profileConfig} />
   </Section>
 
-  <Section
-    title={siteConfig.sections.skills.title}
-    description={siteConfig.sections.skills.description}
-  >
+  <Section {...siteConfig.sections.skills}>
     <Skills skills={profileConfig.skills} />
   </Section>
 
-  <Section
-    title={siteConfig.sections.experiences.title}
-    description={siteConfig.sections.experiences.description}
-  >
+  <Section {...siteConfig.sections.experiences}>
     <Experiences experiences={profileConfig.experiences} />
   </Section>
 
-  <Section
-    title={siteConfig.sections.projects.title}
-    description={siteConfig.sections.projects.description}
-  >
+  <Section {...siteConfig.sections.projects}>
     <Projects projects={profileConfig.projects} />
   </Section>
 </SiteLayout>
