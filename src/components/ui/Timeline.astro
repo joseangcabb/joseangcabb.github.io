@@ -1,0 +1,33 @@
+---
+import type { Experience } from '@/types/profile'
+import Icon from '@/components/ui/Icon.astro'
+
+export interface Props {
+  items: Experience[]
+}
+
+const { items } = Astro.props
+---
+
+<ol
+  class="flex max-h-[470px] flex-col overflow-x-auto overflow-y-auto py-5 sm:flex-row"
+>
+  {
+    items.map((item) => (
+      <li class="group w-full flex-shrink-0 sm:w-[300px]">
+        <div class="flex items-center">
+          <div class="h-px w-full bg-gray-200" />
+          <div class="z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white ring-8 ring-white transition-colors group-hover:border-blue-600">
+            <Icon name="mapPin" className="size-7 text-blue-600" />
+          </div>
+          <div class="h-px w-full bg-gray-200" />
+        </div>
+        <div class="py-3 text-center">
+          <h3 class="font-semibold">{item.company}</h3>
+          <time class="text-xs font-medium text-gray-400">{item.period}</time>
+          <p class="text-gray-600">{item.role}</p>
+        </div>
+      </li>
+    ))
+  }
+</ol>

@@ -1,9 +1,29 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Blog from '../content/blog.mdx'
+import { profileConfig } from '@/config/profile'
+import { siteConfig } from '@/config/site'
+import SiteLayout from '@/layouts/SiteLayout.astro'
+import Section from '@/components/layout/Section.astro'
+
+import About from '@/components/sections/About.astro'
+import Skills from '@/components/sections/Skills.astro'
+import Experiences from '@/components/sections/Experiences.astro'
+import Projects from '@/components/sections/Projects.astro'
 ---
 
-<Layout>
-  <h1>Jose Palacios Caballero</h1>
-  <Blog />
-</Layout>
+<SiteLayout>
+  <Section>
+    <About {...profileConfig} />
+  </Section>
+
+  <Section {...siteConfig.sections.skills}>
+    <Skills skills={profileConfig.skills} />
+  </Section>
+
+  <Section {...siteConfig.sections.experiences}>
+    <Experiences experiences={profileConfig.experiences} />
+  </Section>
+
+  <Section {...siteConfig.sections.projects}>
+    <Projects projects={profileConfig.projects} />
+  </Section>
+</SiteLayout>

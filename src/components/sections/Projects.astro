@@ -1,0 +1,20 @@
+---
+import type { Project } from '@/types/profile'
+import Card from '@/components/ui/Card.astro'
+
+interface Props {
+  projects: Project[]
+}
+
+const { projects } = Astro.props
+---
+
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  {
+    projects.map((item) => (
+      <a href={item.url} class="block" target="_blank" rel="noopener noreferrer">
+        <Card title={item.title} description={item.description} icon="github" />
+      </a>
+    ))
+  }
+</div>

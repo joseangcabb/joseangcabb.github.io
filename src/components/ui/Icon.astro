@@ -1,0 +1,13 @@
+---
+import { icons, type IconName } from '@/lib/icons'
+
+interface Props {
+  name: IconName
+  className?: string
+}
+
+const { name, className } = Astro.props
+const IconComponent = icons[name]
+---
+
+{IconComponent && <IconComponent class={className} />}

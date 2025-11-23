@@ -1,0 +1,12 @@
+---
+import type { Experience } from '@/types/profile'
+import Timeline from '@/components/ui/Timeline.astro'
+
+interface Props {
+  experiences: Experience[]
+}
+
+const { experiences } = Astro.props
+---
+
+<Timeline items={experiences} />
