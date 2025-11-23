@@ -1,4 +1,6 @@
 ---
+import '@/styles/global.css'
+
 import { siteConfig } from '@/config/site'
 import Header from '../components/layout/Header.astro'
 import Footer from '../components/layout/Footer.astro'
@@ -12,7 +14,6 @@ import Footer from '../components/layout/Footer.astro'
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{siteConfig.siteName}</title>
-    <link href="/src/styles/global.css" rel="stylesheet" />
   </head>
   <body>
     <Header siteName={siteConfig.siteName} navItems={siteConfig.navItems} />
