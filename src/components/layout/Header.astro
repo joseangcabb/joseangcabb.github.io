@@ -17,13 +17,12 @@ const navItemStyles: Record<'link' | 'button', string> = {
 ---
 
 <header class="p-4">
-  <div class="mx-auto flex max-w-5xl items-center justify-between gap-x-10">
+  <div class="mx-auto flex max-w-5xl items-center justify-between">
     <a href="/" class="flex items-center gap-x-2">
       <Icon name="code" className="size-10 stroke-[2.5] text-slate-600" />
       <span class="text-2xl font-black">{siteName}</span>
     </a>
-
-    <nav>
+    <nav class="hidden md:block">
       <ul class="flex items-center gap-x-8">
         {
           navItems.map((item) => {
@@ -38,5 +37,66 @@ const navItemStyles: Record<'link' | 'button', string> = {
         }
       </ul>
     </nav>
+    <button
+      id="menu-btn"
+      aria-expanded="false"
+      aria-label="Toggle menu"
+      class="cursor-pointer rounded-lg p-2 transition hover:bg-slate-100 md:hidden"
+    >
+      <span id="menu-icon-bars">
+        <Icon name="bars" className="size-8 text-slate-700" />
+      </span>
+      <span id="menu-icon-x" class="hidden">
+        <Icon name="x" className="size-8 text-slate-700" />
+      </span>
+    </button>
   </div>
+
+  <nav
+    id="mobile-nav"
+    class="max-h-0 overflow-hidden transition-[max-height] duration-300 md:hidden"
+  >
+    <ul class="flex flex-col gap-y-4 px-4 py-4">
+      {
+        navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class={`${navItemStyles[item.variant ?? 'link']} block px-2`}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
 </header>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn')
+  const mobileNav = document.getElementById('mobile-nav')
+  const iconBars = document.getElementById('menu-icon-bars')
+  const iconX = document.getElementById('menu-icon-x')
+
+  menuBtn?.addEventListener('click', () => {
+    const isOpen = menuBtn.getAttribute('aria-expanded') === 'true'
+
+    menuBtn.setAttribute('aria-expanded', String(!isOpen))
+
+    if (mobileNav) {
+      mobileNav.style.maxHeight = isOpen ? '0px' : `${mobileNav.scrollHeight}px`
+    }
+
+    // Toggle icons
+    if (iconBars && iconX) {
+      if (isOpen) {
+        iconBars.classList.remove('hidden')
+        iconX.classList.add('hidden')
+      } else {
+        iconBars.classList.add('hidden')
+        iconX.classList.remove('hidden')
+      }
+    }
+  })
+</script>
