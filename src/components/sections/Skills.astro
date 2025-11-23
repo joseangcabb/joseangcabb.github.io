@@ -11,9 +11,9 @@ interface Props {
 const { skills } = Astro.props as Props
 ---
 
-<div class="container mx-auto grid grid-cols-3 gap-8">
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
   <Card title={skills.backend.title} description={skills.backend.description}>
-    <div class="grid grid-cols-2 gap-2 md:grid-cols-4 xl:grid-cols-6">
+    <div class="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-4">
       {
         skills.backend.stack.map((item) => (
           <Tooltip text={item}>
@@ -28,7 +28,7 @@ const { skills } = Astro.props as Props
   </Card>
 
   <Card title={skills.frontend.title} description={skills.frontend.description}>
-    <div class="grid grid-cols-2 gap-2 md:grid-cols-4 xl:grid-cols-6">
+    <div class="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-4">
       {
         skills.frontend.stack.map((item) => (
           <Tooltip text={item}>
@@ -43,7 +43,7 @@ const { skills } = Astro.props as Props
   </Card>
 
   <Card title={skills.devOps.title} description={skills.devOps.description}>
-    <div class="grid grid-cols-2 gap-2 md:grid-cols-4 xl:grid-cols-6">
+    <div class="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-4">
       {
         skills.devOps.stack.map((item) => (
           <Tooltip text={item}>
@@ -67,7 +67,7 @@ const { skills } = Astro.props as Props
   </Card>
 
   <Card title={skills.devWorkflow.title} description={skills.devWorkflow.description}>
-    <div class="grid grid-cols-2 gap-2 md:grid-cols-4 xl:grid-cols-6">
+    <div class="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-4">
       {
         skills.devWorkflow.stack.map((item) => (
           <Tooltip text={item}>
