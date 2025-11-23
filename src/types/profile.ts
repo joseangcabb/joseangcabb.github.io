@@ -3,7 +3,7 @@ import type { IconName } from '@/lib/icons'
 export type SocialLink = {
   name: string
   url: string
-  icon?: 'linkedin' | 'github'
+  icon: IconName
 }
 
 export type SkillCategory<T = IconName> = {
