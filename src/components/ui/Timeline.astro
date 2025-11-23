@@ -4,16 +4,17 @@ import Icon from '@/components/ui/Icon.astro'
 
 export interface Props {
   items: Experience[]
-  className?: string
 }
 
-const { items, className = '' } = Astro.props as Props
+const { items } = Astro.props as Props
 ---
 
-<ol class={`flex items-baseline overflow-x-auto ${className}`}>
+<ol
+  class="flex max-h-[470px] flex-col overflow-x-auto overflow-y-auto py-5 sm:flex-row"
+>
   {
     items.map((item) => (
-      <li class="group w-[300px] flex-shrink-0">
+      <li class="group w-full flex-shrink-0 sm:w-[300px]">
         <div class="flex items-center">
           <div class="h-px w-full bg-gray-200" />
           <div class="z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white ring-8 ring-white transition-colors group-hover:border-blue-600">
