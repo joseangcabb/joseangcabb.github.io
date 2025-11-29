@@ -10,7 +10,9 @@ interface Props {
 const { logo, navItems } = Astro.props
 ---
 
-<header class="border-b border-slate-200 p-4">
+<header
+  class="fixed top-0 right-0 left-0 z-50 border-b border-slate-200 bg-transparent p-3 transition-all duration-300"
+>
   <div class="mx-auto flex max-w-5xl items-center justify-between">
     <a href="/" class="flex items-center gap-x-2">
       <Icon name="code" className="size-8 stroke-[2] text-slate-600" />
@@ -88,4 +90,17 @@ const { logo, navItems } = Astro.props
       }
     }
   })
+
+  const header = document.querySelector('header')
+
+  const handleScroll = () => {
+    if (window.scrollY > 10) {
+      header?.classList.add('scrolled')
+    } else {
+      header?.classList.remove('scrolled')
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll)
+  handleScroll()
 </script>
