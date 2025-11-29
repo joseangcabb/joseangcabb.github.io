@@ -1,12 +1,14 @@
 import type { NavItem, Sections } from '@/types/site'
 
 type SiteConfig = {
+  logo: string
   siteName: string
   navItems: NavItem[]
   sections: Sections
 }
 
 export const siteConfig: SiteConfig = {
+  logo: 'JP',
   siteName: 'Jose Palacios',
   navItems: [
     { label: 'Home', href: '#home', variant: 'nav-link' },
