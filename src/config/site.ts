@@ -15,7 +15,7 @@ export const siteConfig: SiteConfig = {
     { label: 'Skills', href: '#skills', variant: 'nav-link' },
     { label: 'Experiences', href: '#experiences', variant: 'nav-link' },
     { label: 'Projects', href: '#projects', variant: 'nav-link' },
-    { label: 'Blog', href: '/blog', variant: 'nav-button', icon: 'documentText' },
+    { label: 'Blog', href: '/blog', variant: 'nav-button', icon: 'document' },
   ],
   sections: {
     skills: {

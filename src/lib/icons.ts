@@ -2,6 +2,7 @@ import Code from '@/assets/icons/code.svg'
 import MapPin from '@/assets/icons/map-pin.svg'
 import Bars from '@/assets/icons/bars.svg'
 import X from '@/assets/icons/x.svg'
+import Document from '@/assets/icons/document.svg'
 
 // Social icons
 import Linkedin from '@/assets/icons/socials/linkedin.svg'
@@ -38,6 +39,7 @@ export const icons = {
   code: Code,
   css3: Css3,
   docker: Docker,
+  document: Document,
   git: Git,
   github: Github,
   golang: Golang,

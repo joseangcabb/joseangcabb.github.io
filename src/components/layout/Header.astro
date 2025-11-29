@@ -24,6 +24,7 @@ const { logo, navItems } = Astro.props
           navItems.map((item) => (
             <li>
               <a href={item.href} class={`flex items-center gap-2 ${item.variant}`}>
+                {item.icon && <Icon name={item.icon} className="size-6" />}
                 {item.label}
               </a>
             </li>
@@ -54,7 +55,8 @@ const { logo, navItems } = Astro.props
       {
         navItems.map((item) => (
           <li>
-            <a href={item.href} class={`block px-2 ${item.variant}`}>
+            <a href={item.href} class={`flex items-center gap-2 px-2 ${item.variant}`}>
+              {item.icon && <Icon name={item.icon} className="size-6" />}
               {item.label}
             </a>
           </li>
