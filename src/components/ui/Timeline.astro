@@ -4,13 +4,15 @@ import Icon from '@/components/ui/Icon.astro'
 
 export interface Props {
   items: Experience[]
+  horizontal?: boolean
 }
 
-const { items } = Astro.props
+const { items, horizontal = false } = Astro.props
+const layoutClass = horizontal ? 'sm:flex-row' : ''
 ---
 
 <ol
-  class="flex max-h-[470px] flex-col overflow-x-auto overflow-y-auto py-5 sm:flex-row"
+  class={`flex max-h-[470px] flex-col overflow-x-auto overflow-y-auto py-5 items-center ${layoutClass}`}
 >
   {
     items.map((item) => (
