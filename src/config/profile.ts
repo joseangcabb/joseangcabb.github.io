@@ -13,7 +13,7 @@ type ProfileConfig = {
 }
 
 export const profileConfig: ProfileConfig = {
-  name: 'Jose Palacios',
+  name: 'Jose',
   jobTitle: 'Software Engineer',
   seniority: 'Senior',
   focusArea: 'Full-Stack',
@@ -34,26 +34,25 @@ export const profileConfig: ProfileConfig = {
   skills: {
     backend: {
       title: 'Backend',
-      description:
-        'Strong backend foundations for scalable, secure, and maintainable applications',
+      description: 'Strong backend foundations for scalable and reliable applications',
       stack: ['python', 'golang', 'nodejs', 'kotlin', 'postgresql'],
     },
     frontend: {
       title: 'Frontend',
       description:
-        'Building modern, responsive interfaces with clean, accessible, and high-quality code',
+        'Building modern, accessible interfaces with clean, high-quality code',
       stack: ['typescript', 'html5', 'css3', 'react', 'nextjs', 'tailwind'],
     },
     devOps: {
       title: 'DevOps & Infrastructure',
       description:
-        'Designing secure, automated, and scalable infrastructure with CI/CD, containers, and cloud platforms',
+        'Designing secure, scalable infrastructure with CI/CD and cloud platforms.',
       stack: ['aws', 'docker', 'kubernetes', 'ansible', 'git', 'bash'],
     },
     devWorkflow: {
       title: 'Developer Workflow',
       description:
-        'A highly optimized developer workflow powered by Arch Linux, Neovim, tmux, custom tooling, and AI-assisted automation to maximize speed and productivity',
+        'A high-performance workflow on Arch Linux and Neovim, enhanced with AI.',
       stack: ['archlinux', 'neovim', 'tmux'],
     },
     softwareArchitecture: {
@@ -107,7 +106,7 @@ export const profileConfig: ProfileConfig = {
   ],
   projects: [
     {
-      title: 'Personal Website & Blog',
+      title: 'Personal Website',
       description:
         'Personal website and blog built with Astro and TypeScript, showcasing software projects, technical insights, and development experiments.',
       url: 'https://github.com/joseangcabb/joseangcabb.github.io',
