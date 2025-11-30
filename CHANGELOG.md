@@ -1,5 +1,13 @@
 # Changelog
 
+# [1.2.0](https://github.com/joseangcabb/joseangcabb.github.io/compare/v1.1.1...v1.2.0) (2025-11-30)
+
+
+### Features
+
+* **header:** make header sticky and reactive to scroll ([7078e22](https://github.com/joseangcabb/joseangcabb.github.io/commit/7078e2207bd8e3008ed037bedfa559c3220ac96c))
+* **nav:** add support for icons in navigration items ([b173fb9](https://github.com/joseangcabb/joseangcabb.github.io/commit/b173fb9983e0e512e8ce01eb23e146613cd0d8c4))
+
 ## [1.1.1](https://github.com/joseangcabb/joseangcabb.github.io/compare/v1.1.0...v1.1.1) (2025-11-23)
 
 
