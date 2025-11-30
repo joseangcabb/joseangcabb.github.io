@@ -1,18 +1,21 @@
 import type { NavItem, Sections } from '@/types/site'
 
 type SiteConfig = {
+  logo: string
   siteName: string
   navItems: NavItem[]
   sections: Sections
 }
 
 export const siteConfig: SiteConfig = {
+  logo: 'JP',
   siteName: 'Jose Palacios',
   navItems: [
-    { label: 'Skills', href: '#skills', variant: 'link' },
-    { label: 'Experiences', href: '#experiences', variant: 'link' },
-    { label: 'Projects', href: '#projects', variant: 'link' },
-    { label: 'Blog', href: '/blog', variant: 'button' },
+    { label: 'Home', href: '#home', variant: 'nav-link' },
+    { label: 'Skills', href: '#skills', variant: 'nav-link' },
+    { label: 'Experiences', href: '#experiences', variant: 'nav-link' },
+    { label: 'Projects', href: '#projects', variant: 'nav-link' },
+    { label: 'Blog', href: '/blog', variant: 'nav-button', icon: 'document' },
   ],
   sections: {
     skills: {

@@ -4,16 +4,14 @@ import { siteConfig } from '@/config/site'
 import SiteLayout from '@/layouts/SiteLayout.astro'
 import Section from '@/components/layout/Section.astro'
 
-import About from '@/components/sections/About.astro'
+import Hero from '@/components/sections/Hero.astro'
 import Skills from '@/components/sections/Skills.astro'
 import Experiences from '@/components/sections/Experiences.astro'
 import Projects from '@/components/sections/Projects.astro'
 ---
 
 <SiteLayout>
-  <Section>
-    <About {...profileConfig} />
-  </Section>
+  <Hero {...profileConfig} />
 
   <Section {...siteConfig.sections.skills}>
     <Skills skills={profileConfig.skills} />

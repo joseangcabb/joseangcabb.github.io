@@ -9,4 +9,6 @@ interface Props {
 const { experiences } = Astro.props
 ---
 
-<Timeline items={experiences} />
+<div class="max-h-[570px] overflow-y-auto px-4">
+  <Timeline items={experiences} />
+</div>

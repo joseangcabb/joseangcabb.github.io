@@ -3,31 +3,28 @@ import type { NavItem } from '@/types/site'
 import Icon from '@/components/ui/Icon.astro'
 
 interface Props {
-  siteName: string
+  logo: string
   navItems: NavItem[]
 }
 
-const { siteName, navItems } = Astro.props
-
-const navItemStyles: Record<'link' | 'button', string> = {
-  link: 'font-semibold hover:text-slate-600',
-  button:
-    'rounded-md bg-slate-600 px-3 py-2 font-semibold text-slate-50 hover:bg-slate-700',
-}
+const { logo, navItems } = Astro.props
 ---
 
-<header class="border-b border-slate-200 p-4">
+<header
+  class="fixed top-0 right-0 left-0 z-50 border-b border-slate-200 bg-transparent p-3 transition-all duration-300"
+>
   <div class="mx-auto flex max-w-5xl items-center justify-between">
     <a href="/" class="flex items-center gap-x-2">
-      <Icon name="code" className="size-10 stroke-[2.5] text-slate-600" />
-      <span class="text-2xl font-black">{siteName}</span>
+      <Icon name="code" className="size-8 stroke-[2] text-slate-600" />
+      <span class="text-3xl font-bold text-slate-800">{logo}</span>
     </a>
     <nav class="hidden md:block">
       <ul class="flex items-center gap-x-8">
         {
           navItems.map((item) => (
             <li>
-              <a href={item.href} class={navItemStyles[item.variant ?? 'link']}>
+              <a href={item.href} class={`flex items-center gap-2 ${item.variant}`}>
+                {item.icon && <Icon name={item.icon} className="size-6" />}
                 {item.label}
               </a>
             </li>
@@ -58,10 +55,8 @@ const navItemStyles: Record<'link' | 'button', string> = {
       {
         navItems.map((item) => (
           <li>
-            <a
-              href={item.href}
-              class={`${navItemStyles[item.variant ?? 'link']} block px-2`}
-            >
+            <a href={item.href} class={`flex items-center gap-2 px-2 ${item.variant}`}>
+              {item.icon && <Icon name={item.icon} className="size-6" />}
               {item.label}
             </a>
           </li>
@@ -72,29 +67,59 @@ const navItemStyles: Record<'link' | 'button', string> = {
 </header>
 
 <script>
+  const header = document.querySelector('header')
   const menuBtn = document.getElementById('menu-btn')
   const mobileNav = document.getElementById('mobile-nav')
   const iconBars = document.getElementById('menu-icon-bars')
   const iconX = document.getElementById('menu-icon-x')
+  const navLinks = mobileNav?.querySelectorAll('a') ?? []
+  let navOpen = false
 
-  menuBtn?.addEventListener('click', () => {
+  const updateHeaderState = () => {
+    if (!header) return
+    header.classList.toggle('is-translucent', navOpen || window.scrollY > 10)
+  }
+
+  const toggleIcons = (isOpen = false) => {
+    if (iconBars) iconBars.classList.toggle('hidden', isOpen)
+    if (iconX) iconX.classList.toggle('hidden', !isOpen)
+  }
+
+  const toggleNav = (forcedState?: boolean) => {
+    if (!menuBtn || !mobileNav) return
+
     const isOpen = menuBtn.getAttribute('aria-expanded') === 'true'
+    const nextState = typeof forcedState === 'boolean' ? forcedState : !isOpen
 
-    menuBtn.setAttribute('aria-expanded', String(!isOpen))
+    if (isOpen === nextState) return
 
-    if (mobileNav) {
-      mobileNav.style.maxHeight = isOpen ? '0px' : `${mobileNav.scrollHeight}px`
-    }
+    menuBtn.setAttribute('aria-expanded', String(nextState))
+    mobileNav.style.maxHeight = nextState ? `${mobileNav.scrollHeight}px` : '0px'
 
-    // Toggle icons
-    if (iconBars && iconX) {
-      if (isOpen) {
-        iconBars.classList.remove('hidden')
-        iconX.classList.add('hidden')
-      } else {
-        iconBars.classList.add('hidden')
-        iconX.classList.remove('hidden')
-      }
-    }
+    toggleIcons(nextState)
+    navOpen = nextState
+    updateHeaderState()
+  }
+
+  if (menuBtn) menuBtn.addEventListener('click', () => toggleNav())
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      if (!navOpen) return
+
+      e.preventDefault()
+
+      toggleNav(false)
+
+      const href = link.getAttribute('href')
+      if (!href) return
+
+      setTimeout(() => {
+        window.location.href = href
+      }, 300)
+    })
   })
+
+  window.addEventListener('scroll', updateHeaderState, { passive: true })
+  updateHeaderState()
 </script>
