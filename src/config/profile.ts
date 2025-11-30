@@ -69,7 +69,7 @@ export const profileConfig: ProfileConfig = {
   },
   experiences: [
     {
-      company: 'ioet',
+      company: 'IOET',
       role: 'Senior Software Engineer',
       period: 'Oct 2025 - Present',
     },
