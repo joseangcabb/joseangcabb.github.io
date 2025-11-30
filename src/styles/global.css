@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-header.scrolled {
+header.is-translucent {
   @apply bg-white/70 backdrop-blur-lg border-black/10;
 }
 

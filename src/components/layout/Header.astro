@@ -67,42 +67,59 @@ const { logo, navItems } = Astro.props
 </header>
 
 <script>
+  const header = document.querySelector('header')
   const menuBtn = document.getElementById('menu-btn')
   const mobileNav = document.getElementById('mobile-nav')
   const iconBars = document.getElementById('menu-icon-bars')
   const iconX = document.getElementById('menu-icon-x')
+  const navLinks = mobileNav?.querySelectorAll('a') ?? []
+  let navOpen = false
 
-  menuBtn?.addEventListener('click', () => {
-    const isOpen = menuBtn.getAttribute('aria-expanded') === 'true'
-
-    menuBtn.setAttribute('aria-expanded', String(!isOpen))
-
-    if (mobileNav) {
-      mobileNav.style.maxHeight = isOpen ? '0px' : `${mobileNav.scrollHeight}px`
-    }
-
-    // Toggle icons
-    if (iconBars && iconX) {
-      if (isOpen) {
-        iconBars.classList.remove('hidden')
-        iconX.classList.add('hidden')
-      } else {
-        iconBars.classList.add('hidden')
-        iconX.classList.remove('hidden')
-      }
-    }
-  })
-
-  const header = document.querySelector('header')
-
-  const handleScroll = () => {
-    if (window.scrollY > 10) {
-      header?.classList.add('scrolled')
-    } else {
-      header?.classList.remove('scrolled')
-    }
+  const updateHeaderState = () => {
+    if (!header) return
+    header.classList.toggle('is-translucent', navOpen || window.scrollY > 10)
   }
 
-  window.addEventListener('scroll', handleScroll)
-  handleScroll()
+  const toggleIcons = (isOpen = false) => {
+    if (iconBars) iconBars.classList.toggle('hidden', isOpen)
+    if (iconX) iconX.classList.toggle('hidden', !isOpen)
+  }
+
+  const toggleNav = (forcedState?: boolean) => {
+    if (!menuBtn || !mobileNav) return
+
+    const isOpen = menuBtn.getAttribute('aria-expanded') === 'true'
+    const nextState = typeof forcedState === 'boolean' ? forcedState : !isOpen
+
+    if (isOpen === nextState) return
+
+    menuBtn.setAttribute('aria-expanded', String(nextState))
+    mobileNav.style.maxHeight = nextState ? `${mobileNav.scrollHeight}px` : '0px'
+
+    toggleIcons(nextState)
+    navOpen = nextState
+    updateHeaderState()
+  }
+
+  if (menuBtn) menuBtn.addEventListener('click', () => toggleNav())
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      if (!navOpen) return
+
+      e.preventDefault()
+
+      toggleNav(false)
+
+      const href = link.getAttribute('href')
+      if (!href) return
+
+      setTimeout(() => {
+        window.location.href = href
+      }, 300)
+    })
+  })
+
+  window.addEventListener('scroll', updateHeaderState, { passive: true })
+  updateHeaderState()
 </script>
